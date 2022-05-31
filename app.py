@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import filedialog
 from Gravar_dados import GravarDados
 from Localizar_arquivos import LocalizarArquivos
-from processamento import ProcessamentoDeDados
+#from processamento import ProcessamentoDeDados
 
 class MyGUI(tk.Frame):
     def  __init__(self, parent=None, *args, **kwargs):
@@ -62,7 +62,7 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.title('Adidas Tool')
     root.wm_geometry("720x460")
-    bg = PhotoImage(file = "C:\Users\marchrom\Documents\repostirório git\Conversao\Imagens\logo_adidas.png")
+    bg = PhotoImage(file = "C:\\Users\marchrom\Documents\repostirório git\Conversao\Imagens\logo_adidas.png")
     main = MyGUI(root)
     main.pack(side="top", fill="both", expand=True)
     root.mainloop()
