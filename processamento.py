@@ -21,7 +21,7 @@ class ProcessamentoDeDados:
 
         #gravação dos dados no excel
 
-        gravacao_dados = GravarDados().GravarDados( lista_de_codigos, lista_descricoes, lista_de_smv)
+        gravacao_dados = GravarDados().GravarDados()
 
         #Util().escrever_dados_planilha(lista_de_codigos, lista_descricoes, lista_de_smv)
 

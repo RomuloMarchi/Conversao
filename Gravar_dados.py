@@ -5,17 +5,27 @@ import pandas as pd
 from openpyxl import Workbook, load_workbook
 
 from tkinter import messagebox
-#from Localizar_arquivos import LocalizarArquivos
+
+from Localizar_arquivos import LocalizarArquivos
+from app import MyGUI
 
 class GravarDados:
 
     def DefinirExcel():
         '''
         Define em qual arquivo será gravado os dados do PDF '''
-        #Atribuindo uma váriavel a Database 
+        #
 
-        #arquivo_excel = LocalizarArquivos.get_excel()
-        arquivo_excel = pd.read_excel('C:\\Users\marchrom\Documents\project_build1-main\excel_sample\GSD_Alignment_TT.xlsx')
+        #Atribuindo uma váriavel a Database 
+        #Instancia a classe MyGui do Modulo app.py
+        app =  MyGUI()
+
+        #Recebe o caminho do excel escolhido pelo usuário
+        caminho_excel = app.get_excel()
+        #Lê o arquivo em excel com a biblioteca Pandas
+        arquivo_excel = pd.read_excel(caminho_excel)
+        #arquivo_excel = pd.read_excel('C:\\Users\marchrom\Documents\project_build1-main\excel_sample\GSD_Alignment_TT.xlsx')
+        #arquivo_excel = caminho_excel
         print(arquivo_excel)
 
         # #Atribuindo uma váriavel a coluna de Códigos
@@ -27,17 +37,19 @@ class GravarDados:
         # #Atribuindo uma váriavel a coluna de SMVs
         smv_excel = arquivo_excel.iloc[:,2]
 
-        print(codigos_excel,descricao_excel,smv_excel)
-        return descricao_excel, smv_excel, codigos_excel
+        #print(codigos_excel,descricao_excel,smv_excel)
+        return arquivo_excel, codigos_excel, descricao_excel, smv_excel, caminho_excel
      
-    DefinirExcel()
- 
-
+    #arquivo_excel = (DefinirExcel())
+    
+    arquivo_excel, codigos_excel, descricao_excel, smv_excel, caminho_excel = DefinirExcel()
+   
+    print( arquivo_excel)
+    #print(codigos_excel,descricao_excel,smv_excel)
     #Definindo uma variavel para a planilha do arquivo excel        
-    #planilha = load_workbook(DefinirExcel().arquivo_excel)
-    planilha = load_workbook('C:\\Users\marchrom\Documents\project_build1-main\excel_sample\GSD_Alignment_TT.xlsx')
+    planilha = load_workbook(caminho_excel)
+    #planilha = load_workbook('C:\\Users\marchrom\Documents\project_build1-main\excel_sample\GSD_Alignment_TT.xlsx')
 
-    #Definindo a aba ativa do Excel será o local de gravação dos dados(É sempre definido como a planilha visualizada por útlimo)
     aba_ativa = planilha.active
 
 
@@ -61,12 +73,14 @@ class GravarDados:
             aba_ativa[f"C{smv}"] = lista_de_smv[c]
             smv += 1
     
-    messagebox.showinfo(tittle=None, message= 'Conversão realizada!')
+   # messagebox.showinfo(tittle=None, message= 'Conversão realizada!')
 
     
     #Grava e substitui o arquivo selecionado como DB.
     planilha.save('arquivo.xlsx')
+    planilha.save(caminho_excel)
 
+    
     # print(srcCod)
     # print(srcDesc)
     # print(srcSmv)

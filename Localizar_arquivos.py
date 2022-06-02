@@ -13,7 +13,7 @@ class LocalizarArquivos:
                                                       filetypes=(('Adobe Acrobat Document', '*.pdf'),
                                                                  ("all files", "*.*")))
 
-        label_pdf.configure(text=caminho_do_arquivo_pdf)
+        label_pdf.configure(text="Pdf Selecionado!")
         
         return caminho_do_arquivo_pdf
 
