@@ -18,8 +18,8 @@ class MyGUI(tk.Frame):
         canvas = tk.Canvas(self, width=720, height=460, relief="raised")
         canvas.pack()
 
-        canvas.create_image( 0, 0,
-                     anchor = "nw") # image = bg, 
+        canvas.create_image( 0, 0, 
+                     anchor = "nw") # image = bg,
 
         browse_pdf_btn = tk.Button(text="Selecione o arquivo PDF ",
                                       bg='Crimson', fg='white', font=('helvetica', 10, 'bold'),
@@ -51,7 +51,7 @@ class MyGUI(tk.Frame):
         return caminho_pdf
 
     def launch_process(self):       
-        ProcessamentoDeDados().processamento(pdf_path=caminho_pdf)
+        ProcessamentoDeDados().processamento(pdf_path=caminho_pdf, excel_path = caminho_excel)
         
         print('dados processados')
         
@@ -63,7 +63,7 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.title('Adidas Tool')
     root.wm_geometry("720x460")
-    #bg = PhotoImage(file = "C:\\Users\marchrom\Documents\Imagens\logo_adidas.png")
+    bg = PhotoImage(file = "C:\\Users\marchrom\Documents\Imagens\logo_adidas.png")
     main = MyGUI(root)
     main.pack(side="top", fill="both", expand=True)
     root.resizable(False,False)

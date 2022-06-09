@@ -14,7 +14,6 @@ class LocalizarArquivos:
                                                                  ("all files", "*.*")))
 
         label_pdf.configure(text="Pdf Selecionado!")
-        
         return caminho_do_arquivo_pdf
 
     def buscar_excel(self, label_excel):
@@ -26,5 +25,4 @@ class LocalizarArquivos:
                                                  filetypes=(('Microsoft Excel Worksheet', '*.xlsx'),
                                                             ("all files", "*.*")))
         label_excel.configure(text=caminho_do_arquivo_excel)
-        
         return caminho_do_arquivo_excel
