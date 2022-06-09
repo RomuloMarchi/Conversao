@@ -63,7 +63,7 @@ if __name__ == "__main__":
     root = tk.Tk()
     root.title('Adidas Tool')
     root.wm_geometry("720x460")
-    bg = PhotoImage(file = "C:\\Users\marchrom\Documents\Imagens\logo_adidas.png")
+    #bg = PhotoImage(file = "C:\\Users\marchrom\Documents\Imagens\logo_adidas.png")
     main = MyGUI(root)
     main.pack(side="top", fill="both", expand=True)
     root.resizable(False,False)

@@ -48,7 +48,7 @@ class GravarDados:
     #print( arquivo_excel)
     #print(codigos_excel,descricao_excel,smv_excel)
     #Definindo uma variavel para a planilha do arquivo excel        
-    #planilha = load_workbook(caminho_excel)
+    #planilha = load_workbook(self.caminho_excel)
     planilha = load_workbook('C:\\Users\marchrom\Documents\Old\PDF_Extract-main\excel_sample\GSD_Alignment_TT.xlsx')
 
     aba_ativa = planilha.active

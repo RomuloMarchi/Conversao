@@ -4,7 +4,7 @@ from util import Util
 
 
 #PDF_FILE = 'pdf_sample\S211CSIW127.pdf'
-# PDF_FILE = 'pdf_sample\Cruzeiro.pdf'
+#PDF_FILE = 'pdf_sample\Cruzeiro.pdf'
 #PDF_FILE = 'pdf_sample\Join Back Rises - Fechar gancho costas 45 cm.pdf'
 
 class ExtrairDados():
